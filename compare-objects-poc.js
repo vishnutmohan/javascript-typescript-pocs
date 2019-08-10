@@ -83,9 +83,27 @@ meeting["Attendees"].split(',').forEach(ele => {
 obj["start"] = new Date(parseInt(meeting["Start"].match(/\d+/g)) + 330 * 60)
 obj["end"] = new Date(parseInt(meeting["End"].match(/\d+/g)) + 330 * 60)
 
-console.log(obj);
+// console.log(obj);
 
+let attendees = [{
+        Name: "Vivek",
+        Email: "vivek@graspio.com"
+    },
+    {
+        Name: "admin",
+        Email: "vishnu@graspio.com"
+    }
+]
 
+let generateAttendees = (attendees) => {
+    attendeesStr = '';
+    attendees.forEach(ele => {
+        attendeesStr += `\\"${ele.Name}\\" <${ele.Email}>, `
+    })
+    return `----${attendeesStr.trim().slice(0, -1) + '|| '}------`;
+}
+
+console.log(generateAttendees(attendees));
 
 // let attendees = room2.Appointments[0].Attendees.split(',').map(x => x.match(/<.*@.*>/i)[0].substr(1).slice(0, -1));
 
