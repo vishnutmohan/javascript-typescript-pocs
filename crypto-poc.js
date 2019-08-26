@@ -7,7 +7,7 @@ let encryption = (text) => {
     let cipher = crypto.createCipheriv(algorithm, Buffer.from(key), iv);
     let encryptedData = cipher.update(text);
     encryptedData = Buffer.concat([encryptedData, cipher.final()]);
-    console.log(`${encryptedData.length} of encrypted data: ${encryptedData.toString('hex')}`);
+    console.log(`${encryptedData.length} length of encrypted data: ${encryptedData.toString('hex')}`);
 }
 
 encryption("vishnu mohan");

@@ -134,3 +134,5 @@ typings/
 # End of https://www.gitignore.io/api/node,macos,visualstudiocode
 
 *mp3
+
+compare-*
